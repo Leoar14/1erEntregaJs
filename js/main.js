@@ -1,137 +1,97 @@
 const saludo = ()=>{
-    const nombre = prompt ('Ingrese nombre');
+    const nombre = prompt ("Ingrese nombre");
     if(nombre != ""){
     alert (`Bienvenido ${nombre}`)
     }else {
-        alert('No ingresaste tu nombre')
-        
+        alert("No ingresaste tu nombre")
     }
     }
 saludo()
-    
-    
-    
-    // const elegirPrenda = (a, b)=>{
-    //     let productoElegido =prompt('Ingrese el nombre sin mayusculas ni tilde de la prenda a comprar: \n  Camiseta \n  Pantalón \n  Gorra \n  Mochila')
-    //     while(productoElegido != ""){
-    //     switch (productoElegido) {
-    //         case 'camiseta':
-    //             alert ('Camiseta: $24000')
-    //             break;
-    //         case 'pantalon':
-    //             alert ('Pantalón: $10000')
-    //             break;
-    //         case 'gorra':
-    //             alert ('Gorra: $5000')
-    //             break;
-    //         case 'mochila':
-    //             alert ('Mochila: $18000')
-    //             break;
-    //         default:
-    //             alert ('Producto invalido')
-    //             break;
-    //     }
-    //     break
-    // }
-    // }
-    // elegirPrenda ()
-    
-    // const confirmacion = () =>{
-    //     prompt('Si desea terminar con su compra presione enter o dele a aceptar')
-    //     alert('Compra finalizada, retirar en sucursal')
-    // }
-    
-    // confirmacion()
-    
 
+function showProps(obj) {
+    let result = ``;
 
-
-    
-// const elegirPrenda = (a, b)=>{
-
-const carritoDeCompras = [];
-const carritoFinal = [];
-
-let productoElegido =prompt('Ingrese el nombre sin mayusculas ni tilde de la prenda a consultar: \n  Camiseta \n  Pantalón \n  Gorra \n  Mochila')
-let precio = 0;    
-
-while(productoElegido != ""){
-    if(productoElegido == "camiseta" || "pantalon" || "gorra" || "mochila"){
-        switch(productoElegido) {
-            case 'camiseta':
-                alert ('Camiseta: $24000')
-                precio = 24000
-                break;
-            case 'pantalon':
-                alert ('Pantalón: $10000')
-                precio = 10000
-                break;
-            case 'gorra':
-                alert ('Gorra: $5000')
-                precio = 5000
-                break;
-            case 'mochila':
-                alert ('Mochila: $18000')
-                precio = 18000
-                break;
-            default:
-                alert ('Producto invalido')
-                break;
-            }
-        let unidades = parseInt(prompt("Cuantas unidades quiere llevar"));
-        
-        carritoDeCompras.push([productoElegido,  precio,  unidades]);
-
-        alert (carritoDeCompras)
-        break;
-    } else {
-        alert("No tenemos ese producto ahora mismo")
-    }
-}
-while(productoElegido != ""){
-    if(productoElegido == "camiseta" || "pantalon" || "gorra" || "mochila"){
-        switch(productoElegido) {
-            case 'camiseta':
-                alert ('Camiseta: $24000')
-                precio = 24000
-                break;
-            case 'pantalon':
-                alert ('Pantalón: $10000')
-                precio = 10000
-                break;
-            case 'gorra':
-                alert ('Gorra: $5000')
-                precio = 5000
-                break;
-            case 'mochila':
-                alert ('Mochila: $18000')
-                precio = 18000
-                break;
-            default:
-                alert ('Producto invalido')
-                break;
-            }
-        let unidades = parseInt(prompt("Cuantas unidades quiere llevar"));
-        
-        carritoDeCompras.push([productoElegido,  precio,  unidades]);
-
-        alert (carritoDeCompras)
-        break;
-    } else {
-        alert("No tenemos ese producto ahora mismo")
-    }
-}
-
-let seleccionDeProductos = prompt("En caso de no querer seguir comprando, escriba NO")
-do {
-productoElegido
-}while(seleccionDeProductos == "NO"){
-    alert("gracias por su compra. Tenga un buen dia")
-    carritoDeCompras.forEach((carritoFinal) => {
-        alert(`productoEegido: "${carritoFinal.productoElegido}", unidades: "${carritoFinal.unidades}",total a pagar por producto "${carritoFinal.unidades * carritoFinal.precio}"`)
-        })
+    for (let i in obj) {
+      // obj.hasOwnProperty() se usa para filtrar propiedades de la cadena de prototipos del objeto
+        if (obj.hasOwnProperty(i)) {
+            result += `\n${i}:\n\tprecio por unidad: $${obj[i]["precio_x_unidad"]}.\n\tcantidad: ${obj[i]["unidades"]}.\n\tsubtotal: $${obj[i]["subtotal"]}\n\n`;
         }
-// Mostramos la cantidad de elementos ingresados.
-alert('La lista tiene ' + carritoDeCompras.length + ' productos.');
-// Mostramos todos los elementos unos abajo de otro.
-alert('La lista tiene:\n' + carritoDeCompras.join('\n'));
+    }
+    return result;
+}
+
+let carritoDeCompras = {};
+let carritoFinal = [];
+let productos = {
+    "camiseta": {
+        "precio": 24000,
+        "cantidad": 10
+    },
+    "pantalon": {
+        "precio": 10000,
+        "cantidad": 10
+    },
+    "gorra": {
+        "precio": 5000,
+        "cantidad": 100
+    },
+    "mochila": {
+        "precio": 18000,
+        "cantidad": 5
+    }
+};
+let keys = Object.keys(productos);
+
+
+let total = 0;
+
+const elegirProducto = () => {
+
+    let unidades = 0;
+    let subtotal = 0;
+
+    do{
+        productoElegido = prompt("Ingrese el nombre sin mayusculas ni tilde de la prenda a consultar: \n"+
+                            `\t camiseta => precio: $${productos["camiseta"]["precio"]} => cantidad disp.: ${productos["camiseta"]["cantidad"]} \n`+
+                            `\t pantalon => precio: $$productost["pantalon"]["precio"]} => cantidad disp.: ${productos["pantalon"]["cantidad"]} \n`+
+                            `\t gorra => precio: $${productos["gorra"]["precio"]} => cantidad disp.: ${productos["gorra"]["cantidad"]} \n`+
+                            `\t mochila => precio: $${productos["mochila"]["precio"]} => cantidad disp.: ${productos["mochila"]["cantidad"]} \n`+
+                            "\t Ingrese NO, si no desea comprar nada");
+        if(keys.includes(productoElegido) || productoElegido === "NO"){
+            do{
+                unidades = parseInt(prompt("¿Cuantas unidades quiere lleconst?\n"+
+                `\t ${productoElegido} => precio: $${productos[productoElegido]["precio"]} => cantidad disp.: ${productos[productoElegido]["cantidad"]} \n`));
+                if(unidades < 0 || unidades > productos[productoElegido]["cantidad"]) {
+                    alert(`Debe ingresar un Numero mayor a 0 y menor o igual a ${productos[productoElegido]["cantidad"]}`)
+                }
+            }while(unidades < 0 || unidades > productos[productoElegido]["cantidad"])
+            subtotal = productos[productoElegido]["precio"] * unidades
+                    carritoDeCompras[productoElegido] = {
+                        "precio_x_unidad": productos[productoElegido]["precio"],
+                        "unidades": unidades,
+                        "subtotal": subtotal
+                    };
+                    // Falta restar las unidades al stock
+                    result =showProps(carritoDeCompras)
+                    alert ("Su carrito hasta el momento es: \n"+`\t* ${result}`)
+                    productoElegido = prompt("Desea seguir comprando?: \n"+
+                                        `\t* SI \n`+
+                                        `\t* NO \n`)
+        } else {
+            alert(`No tenemos este producto: ${productoElegido}`)
+        }
+    }while(productoElegido != "NO")
+
+    if (productoElegido == "NO" && Object.entries(carritoDeCompras).length === 0){
+        alert("gracias por su visita. Que tenga un buen dia")
+    }
+
+    if (Object.entries(carritoDeCompras).length != 0){
+        for (const product in carritoDeCompras) {
+            total += carritoDeCompras[product]["subtotal"]
+        }
+        alert(`Total a Pagar: $${total}`);
+    }
+}
+
+elegirProducto()
