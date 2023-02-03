@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+    background-color: rgba(117, 150, 199, 0.596);
+    }
+header {
+  background-color: rgba(139, 151, 185, 0.836);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+  color: antiquewhite;
+}
+
+h1, h2, h3, h4 {
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  background-color:rgba(139, 151, 185, 0.836);
+  margin-top: 15px;
+  padding: 5px;
+  font-size: 25px;
+}
+
+img {
+  max-width: 350px;
+  object-fit: cover;
+}
+
+.imagenes-logo {
+  width: 100px;
+  margin-left: 5px;
+}
+
+@media (min-width: 764px) {
+  img {
+    max-width: 400px;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  h2, h3, h4 {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  img {
+    max-width: 700px;
+  }
+  h2, h3, h4 {
+    font-size: 35px;
+  }
+}
+header .navbar {
+    background-color:rgba(32, 68, 168, 0.836) ;
+}
+.navbar{
+    flex-wrap: nowrap;
+}
+.navbar-nav {
+  width: 150px;
+}
+
+.navbar-toggler {
+  background-color: rgb(235, 214, 21);
+  border-radius: 10px;
+  border-color: black ;
+}
+.navbar-toggler-icon{
+    color: black;
+}
+
+.nav-item {
+  color: antiquewhite;
+  justify-content: end;
+  background-color: rgba(15, 77, 128, 0.685);
+  width: 300px;
+  border: solid rgba(202, 66, 12, 0.76);
+  border-bottom-right-radius: 30px;
+  text-align: center;
+  padding: 3px;
+  margin-top: 10px;
+}
+
+.nav-link {
+  color: antiquewhite;
+  width: auto;
+}
+
+.dropdown-item {
+  border-radius: 30px;
+  width: 200px;
+  text-align: center;
+  background-color: rgba(202, 66, 12, 0.76);
+  margin-top: 5px;
+  color: antiquewhite;
+  overflow: auto;
+}
+
+input {
+  margin: 20px;
+}
+
+
+.tarjeta {
+  text-align: center;
+  border: 4px solid black;
+  max-width: 400px;
+  height: auto;
+  padding: 15px;
+  border-color: rgb(167, 130, 11);
+  margin: 1px 1px 1px 1px;
+  align-items: center;
+}
+
+.tarjeta__img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.tarjeta__titulo {
+  text-align: center;
+}
+
+.tarjeta__title4 {
+  text-align: center;
+  padding-top: 5px;
+  color: rgb(255, 255, 255);
+}
+
+.tienda__title {
+  color: rgb(99, 15, 15);
+}
+
+.tarjeta__precio {
+  color: rgb(99, 15, 15);
+  display: block;
+  padding: 10px 0;
+  font-size: 1.5rem;
+}
+
+.caja__1 {
+  max-width: 100%;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+}
+
+@media (min-width: 764px) {
+  .grancaja__1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    flex-direction: row;
+  }
+  .caja__1 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+footer {
+  background-size: auto;
+  max-width: 100%;
+  margin-top: 10px;
+  border-top: 2px solid;
+  border-color: antiquewhite;
+}
+
+.container__footer {
+  background-color: rgba(29, 25, 25, 0.829);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.box__footer {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  padding: 40px 40px 0px 40px;
+}
+
+.box__footer .logo img {
+  width: 20px;
+}
+
+.box__footer h2 {
+  padding: 10px;
+  margin-bottom: 15px;
+  color: aliceblue;
+  font-weight: 700;
+}
+
+.box__footer a {
+  margin-top: 10px;
+  color: antiquewhite;
+  font-weight: 500;
+}
+
+.box__footer a:hover {
+  opacity: 0.8;
+}
+
+.box__footer a .fab {
+  font-size: 20px;
+}
+
+footer p {
+  background: none;
+}
+
+footer a img {
+  width: 15px;
+}
+
+.logo {
+  max-width: 100px;
+  border-radius: 25px 25px 25px;
+  margin-top: 15px;
+}
+
+.inline {
+  display: flex;
+  display: inline-block;
+}
+
+.box__copyright {
+  border-top: antiquewhite;
+  max-width: 1200px;
+  text-align: center;
+  color: antiquewhite;
+}
+
+.box__copyright p {
+  border-top: antiquewhite;
+  margin-top: 20px;
+  color: #7a7a7a;
+  text-align: center;
+}
+
+.box__copyright--corpored {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 764px) {
+  .box__copyright {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    gap: 1em;
+  }
+}
+
