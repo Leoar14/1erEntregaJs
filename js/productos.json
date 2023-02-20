@@ -1,0 +1,67 @@
+
+[
+    {
+        "id": "camiseta-1",
+        "titulo": "Camiseta de Argentina",
+        "imagen": "./img/camiseta.jpg",
+        "categoria":{
+            "nombre": "Abrigos",
+            "id": "abrigos"
+        },
+        "precio": 24000
+    },
+    {
+        "id": "conjuntoInvierno-1",
+        "titulo": "Conjunto Invierno",
+        "imagen": "./img/conjunto-largo.jpg",
+        "categoria":{
+            "nombre":"Indumentaria",
+            "id": "indumentaria"
+        },
+        "precio": 32000
+    },
+    {
+        "id": "botinero-1",
+        "titulo": "Botinero",
+        "imagen": "./img/botinero.jpg",
+        "categoria":{
+            "nombre":"Articulo",
+            "id": "articulo"
+        },
+        "precio": 13000
+    },
+
+    {
+        "id": "pantalon-1",
+        "titulo": "Pantalón",
+        "imagen": "./img/pantalon.jpg",
+        "categoria":{
+            "nombre":"Indumentaria",
+            "id": "indumentaria"
+        },
+        "precio": 10000
+    },
+
+    {
+        "id": "mochila-1",
+        "titulo": "Mochila",
+        "imagen": "./img/mochila.jpg",
+        "categoria":{
+            "nombre":"Articulo",
+            "id": "articulo"
+        },
+        "precio": 18000
+    },
+
+    {
+        "id": "gorra-1",
+        "titulo": "Gorra",
+        "imagen": "./img/gorra.jpg",
+        "categoria":{
+            "nombre":"Articulo",
+            "id": "articulo"
+        },
+        "precio": 5000
+    }
+
+]
